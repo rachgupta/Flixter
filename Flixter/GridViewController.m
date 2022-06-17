@@ -83,6 +83,7 @@
     
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
     NSIndexPath *myPath = [self.gridView indexPathForCell:sender];
     NSDictionary *dataToPass = self.movies[myPath.item];
     DetailsViewController *detailVC = [segue destinationViewController];

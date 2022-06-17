@@ -65,9 +65,6 @@
                [self.tableView reloadData];
                // NSLog(@"%@", self.movies);
                [self.activityIndicator stopAnimating];
-               // TODO: Get the array of movies
-               // TODO: Store the movies in a property to use elsewhere
-               // TODO: Reload your table view data
            }
         [self.refreshControl endRefreshing];
        }];
@@ -119,7 +116,7 @@
  */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *myPath = [self.tableView indexPathForCell:sender];
-    NSDictionary *dataToPass = self.movies[myPath.row];
+    NSDictionary *dataToPass = self.filteredMovies[myPath.row];
     DetailsViewController *detailVC = [segue destinationViewController];
     detailVC.detailDict = dataToPass;
     
