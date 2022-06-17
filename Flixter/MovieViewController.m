@@ -58,7 +58,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                self.movies = dataDictionary[@"results"];
                [self.tableView reloadData];
-               NSLog(@"%@", self.movies);
+               // NSLog(@"%@", self.movies);
                [self.activityIndicator stopAnimating];
                // TODO: Get the array of movies
                // TODO: Store the movies in a property to use elsewhere

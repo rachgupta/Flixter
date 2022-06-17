@@ -85,7 +85,7 @@
             <objects>
                 <viewController id="hhv-TL-NJr" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qoh-rd-Axf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVs-Cf-IKm">
@@ -151,14 +151,14 @@
                                 <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5qD-ZT-ck0">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5qD-ZT-ck0">
                                     <size key="itemSize" width="120" height="167"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jND-eB-5x4" customClass="GridCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCell" id="jND-eB-5x4" customClass="GridCell">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="167"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u94-7V-kcM">
@@ -171,6 +171,7 @@
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <size key="customSize" width="120" height="167"/>
                                         <connections>
                                             <outlet property="gridPoster" destination="Y3P-1S-pV3" id="Jqv-pL-xKJ"/>
@@ -183,6 +184,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movie Grid" image="square.grid.3x3.topright.fill" catalog="system" id="yW4-ma-liF"/>
+                    <connections>
+                        <outlet property="gridView" destination="Ov7-K8-nZM" id="GyI-vO-xCF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43g-2A-chg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,17 +203,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="Uro-Fs-1TL" kind="relationship" relationship="viewControllers" id="bIY-hN-X15"/>
-                        <segue destination="y72-p3-Dhz" kind="relationship" relationship="viewControllers" id="eIM-0X-T4T"/>
+                        <segue destination="kAF-Lz-BRV" kind="relationship" relationship="viewControllers" id="ARP-IQ-x20"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqo-9p-8Pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-841" y="-1199"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Now Playing-->
         <scene sceneID="DF6-9E-QB4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kAF-Lz-BRV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" id="PLF-eQ-SpH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lTV-pm-1JM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -225,9 +230,6 @@
             <point key="canvasLocation" x="-9" y="-577"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eIM-0X-T4T"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="square.grid.3x3.topright.fill" catalog="system" width="128" height="112"/>
@@ -236,6 +238,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
