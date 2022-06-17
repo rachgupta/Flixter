@@ -8,10 +8,12 @@
 #import "GridViewController.h"
 #import "GridCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface GridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UICollectionView *gridView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
 @end
@@ -26,7 +28,7 @@
     [self fetchMovies];
     // self.refreshControl = [[UIRefreshControl alloc] init];
     // [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    // [self.tableView insertSubview:self.refreshControl atIndex:0];
+    // [self.gridView insertSubview:self.refreshControl atIndex:0];
     // Do any additional setup after loading the view.
 }
 - (void)fetchMovies {
@@ -79,6 +81,12 @@
     [cell.gridPoster setImageWithURL:posterURL];
     return cell;
     
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *myPath = [self.gridView indexPathForCell:sender];
+    NSDictionary *dataToPass = self.movies[myPath.item];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.detailDict = dataToPass;
 }
 /*
 #pragma mark - Navigation
