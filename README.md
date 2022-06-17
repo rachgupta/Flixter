@@ -42,7 +42,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/2mOUF6Q' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![](https://github.com/rachgupta/Flixter/blob/main/demo.gif)
 
 ## Notes
 
