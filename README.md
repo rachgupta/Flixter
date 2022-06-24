@@ -1,7 +1,7 @@
 # Project 1 - *Flixter*
 Rachna Gupta
 
-Flixter is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+Flixter is a movies app that shows current movies and their details using the [The Movie Database API](http://docs.themoviedb.apiary.io/#). It is meant to be an exercise for me to demonstrate basic iOS design layouts and concepts. 
 
 Time spent: **24** hours spent in total
 
