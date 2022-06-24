@@ -1,7 +1,6 @@
 # Project 1 - *Flixter*
 Rachna Gupta
-
-**Name of your app** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+Flixter is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 Time spent: **24** hours spent in total
 
